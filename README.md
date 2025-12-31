@@ -1,4 +1,4 @@
-# Determine npm dist-tag Action
+# Introduction
 
 This action determines the npm dist-tag based on the git tag.
 
