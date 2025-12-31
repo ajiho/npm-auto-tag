@@ -8,11 +8,13 @@ REF="${GITHUB_REF#refs/tags/}"
 if [[ "$REF" =~ - ]]; then
   ID="${REF#*-}"
   ID="${ID%%.*}"  # alpha.0 -> alpha
-  echo "Detected prerelease: $ID"
-  echo "tag=$ID" >> "$GITHUB_OUTPUT"
-  echo "isprerelease=true" >> "$GITHUB_OUTPUT"
+  echo "Detected tag: $ID"
+  echo "tag=$ID" >> $GITHUB_OUTPUT
+  echo "prerelease: true"
+  echo "prerelease=true" >> $GITHUB_OUTPUT
 else
-  echo "Stable release, using 'latest'"
-  echo "tag=latest" >> "$GITHUB_OUTPUT"
-  echo "isprerelease=false" >> "$GITHUB_OUTPUT"
+  echo "Detected tag: latest"
+  echo "tag=latest" >> $GITHUB_OUTPUT
+  echo "prerelease: false"  
+  echo "prerelease=false" >> $GITHUB_OUTPUT
 fi
