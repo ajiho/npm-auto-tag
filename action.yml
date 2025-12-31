@@ -5,8 +5,10 @@ runs:
   using: "composite"
   steps:
     - name: Run dist tag script
-      run: /entrypoint.sh
       shell: bash
+      run: |
+        echo "Running entrypoint.sh"
+        bash "$GITHUB_ACTION_PATH/entrypoint.sh"
 outputs:
   tag:
     description: "The npm dist-tag to use when publishing"
