@@ -5,7 +5,7 @@ runs:
   using: "composite"
   steps:
     - name: Run dist tag script
-      run: ./entrypoint.sh
+      run: /entrypoint.sh
       shell: bash
 outputs:
   tag:
